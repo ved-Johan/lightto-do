@@ -1,13 +1,22 @@
 {
   "name": "lightto-do",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "babel-plugin-macros": "^3.1.0",
+    "electron-json-storage": "^4.5.0",
+    "framer-motion": "^6.3.3",
+    "menubar": "^9.2.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-easy-crop": "^4.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
   },
@@ -15,7 +24,24 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "dev": "nf start",
+    "electron-build": "electron-builder",
+    "electron-pack": "build --em.main=build/electron.js"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "com.ved.lightto-do",
+    "files": [
+      "./build/**/*",
+      "./node_modules/**/*",
+      "./public/index.html"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +60,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "electron": "^18.2.3",
+    "electron-builder": "^23.0.3",
+    "foreman": "^3.0.1",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24"
+  },
+  "description": "Lightweight To-Do Tray App",
+  "main": "public/electron.js",
+  "author": "ved-Johan <61301504+ved-Johan@users.noreply.github.com>",
+  "license": "MIT"
 }
