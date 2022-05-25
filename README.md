@@ -1,4 +1,4 @@
-# lightTo-DO
+# lightTo-Do
 
 A simple electron to-do list app.
 
